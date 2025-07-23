@@ -1,14 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
 import { shadow } from "@/styles/utils";
+import { Button } from "./ui/button";
 const Header = () => {
+  const user = null; // Replace with actual user state or context
   return (
-    <header className="relative flex h-24 w-full items-center  justify-between bg-popover px-3
-    sm:px-6"
-    style={{
-        boxShadow:shadow
-    }}>
-      <Link  className="flex items-end gap-2" href="/">
+    <header
+      className="bg-popover relative flex h-24 w-full items-center justify-between px-3 sm:px-6"
+      style={{
+        boxShadow: shadow,
+      }}
+    >
+      <Link className="flex items-end gap-2" href="/">
         <Image
           src="/goatius.png"
           height={60}
@@ -17,10 +20,24 @@ const Header = () => {
           className="rounded-full"
           priority
         />
-     <h1 className="flex flex-col pb-1 text-2xl font-semibold leading-6">
-        GOAT <span>Notes</span>
-     </h1>
+        <h1 className="flex flex-col pb-1 text-2xl font-semibold leading-6">
+          GOAT <span>Notes</span>
+        </h1>
       </Link>
+      <div className="flex gap-4">
+        {user ? (
+          "Logout"
+        ) : (
+          <>
+            <Button asChild>
+              <Link className="hidden sm:block" href="/sign-up">Sign Up</Link>
+            </Button>
+            <Button asChild>
+              <Link href="/login">Login</Link>
+            </Button>
+          </>
+        )}
+      </div>
     </header>
   );
 };

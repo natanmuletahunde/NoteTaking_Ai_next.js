@@ -4,10 +4,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: white; /* Always white */
-  color: black; /* Optional, ensures readable text */
 }
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -44,9 +41,8 @@ body {
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-
   .dark {
-    --background: 0 0% 100%; /* Force background white in dark mode */
+    --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
@@ -78,5 +74,11 @@ body {
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }

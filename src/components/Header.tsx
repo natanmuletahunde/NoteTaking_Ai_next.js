@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { shadow } from "@/styles/utils";
 import { Button } from "./ui/button";
+import DarkModeToggle from "./DarkModeToggle";
 const Header = () => {
   const user = null; // Replace with actual user state or context
   return (
@@ -37,6 +38,7 @@ const Header = () => {
             </Button>
           </>
         )}
+        <DarkModeToggle/>
       </div>
     </header>
   );

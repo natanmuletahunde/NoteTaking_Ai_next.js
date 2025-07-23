@@ -11,10 +11,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-
-export function ModeToggle() {
+ function DarkModeToggle() {
   const { setTheme } = useTheme()
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -38,3 +36,4 @@ export function ModeToggle() {
     </DropdownMenu>
   )
 }
+export default DarkModeToggle

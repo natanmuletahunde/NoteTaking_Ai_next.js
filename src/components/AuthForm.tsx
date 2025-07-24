@@ -1,3 +1,6 @@
+type Props = {
+    type: 'login' | 'register';
+}
 const AuthForm = () => {
   return (
     <div>
@@ -7,3 +10,4 @@ const AuthForm = () => {
 }
 
 export default AuthForm
+ 
